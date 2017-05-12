@@ -1,11 +1,11 @@
-$fn=50;
+$fn=100;
 
 
-full_assembly();
+//full_assembly();
 
 //rotate([180,0,0])print_half1();
 //rotate([180,0,0])print_half2();
-//handler();
+handler();
 //rotate([180,0,0])kork();
 //stopper();
 
@@ -56,7 +56,7 @@ module full_assembly(){
 
     translate([0,0,10])stopper();
     
-    bolt(8,150);
+    translate([0,0,5])bolt(8,160);
     translate([0,0,-150/2+7])lcoknut(8);
 
     translate([0,0,-5])bearing8x22x7();
@@ -121,7 +121,8 @@ module handler(){
             translate([10,0,10])stopper_holder();
         }
         translate([0,0,-1])cylinder(d=8.2, h=90);
-        translate([0,0,75])cylinder(d=8*2+0.3,h=40,$fn=6);
+        //translate([0,0,85])cylinder(d=8*2+0.3,h=30,$fn=6);
+        translate([0,0,85])cylinder(d=13+0.5,h=30,$fn=$fn/2);
         translate([0,0,107.5])cube([50,50,2], center=true);
             
         translate([9,0,11])rotate([90,0,0])cylinder(d=3.1,h=16, center=true); // hole for stopper
